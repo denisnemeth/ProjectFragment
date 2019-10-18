@@ -5,6 +5,9 @@ public class Fragment {
     private int numerator;
     private int denominator;
 
+    public Fragment() {
+    }
+
     public Fragment(int numerator, int denominator) {
         if (numerator==0) {
             denominator=1;
@@ -38,7 +41,7 @@ public class Fragment {
         int comDivisor=getLargestComDivisor();
         numerator=numerator/comDivisor;
         denominator=denominator/comDivisor;
-        System.out.println(numerator+" / "+denominator);
+        //System.out.println(numerator+" / "+denominator);
     }
 
     public int extendFragment() {
@@ -47,6 +50,12 @@ public class Fragment {
 
     public double getRealValue() {
         return (double) numerator/denominator;
+    }
+
+    public MixedNumber getMixedNumber() {
+        int value=numerator/denominator;
+                Fragment f=new Fragment(numerator%denominator, denominator);
+        return new MixedNumber(value,f);
     }
 
     public void reverse() {
@@ -65,8 +74,8 @@ public class Fragment {
     }
 
     private int getLargestComDivisor() {
-        int absNumerator=Math.abs(numerator);
-        int absDenominator=Math.abs(denominator);
+        int absNumerator= Math.abs(numerator);
+        int absDenominator= Math.abs(denominator);
         int comDivisor=absNumerator>absDenominator?absNumerator:absDenominator;
         while (numerator%comDivisor!=0 || denominator%comDivisor!=0) {
             comDivisor--;
