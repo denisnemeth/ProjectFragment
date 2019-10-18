@@ -37,15 +37,20 @@ public class Fragment {
         this.denominator = denominator;
     }
 
-    public void changeToBasicShape() {
-        int comDivisor=getLargestComDivisor();
-        numerator=numerator/comDivisor;
-        denominator=denominator/comDivisor;
-        //System.out.println(numerator+" / "+denominator);
+    public boolean isFragmentInBasicShape(){
+        if(getLargestComDivisor()==1){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    public int extendFragment() {
-        return 0;
+    public void extendFragment(int value){
+        if(value!=0){
+            numerator*=value;
+            denominator*=value;
+        }
     }
 
     public double getRealValue() {
@@ -83,12 +88,10 @@ public class Fragment {
         return comDivisor;
     }
 
-    public boolean isFragmentInBasicShape() {
-        if (getLargestComDivisor()==1) {
-            return true;
-        } else {
-            return false;
-        }
+    public void changeToBasicShape(){
+        int commonDividisor=getLargestComDivisor();
+        numerator=numerator/commonDividisor;
+        denominator=denominator/commonDividisor;
     }
 
     @Override

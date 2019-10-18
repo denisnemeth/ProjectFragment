@@ -47,7 +47,7 @@ public class MyMath {
     public static Fragment sub(int value, Fragment a) {
         Fragment result=null;
         result =
-                new Fragment(value*a.getDenominator()-1*a.getNumerator(),a.getDenominator()*1);
+                new Fragment(value*a.getDenominator()-a.getNumerator(),a.getDenominator()*1);
         result.changeToBasicShape();
         return result;
     }
