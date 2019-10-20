@@ -31,9 +31,13 @@ public class Main {
         r1.setFill(true);
         r1.showRectangle();*/
 
-        Circle c1=new Circle(10);
+        /*Circle c1=new Circle(10);
         System.out.println(c1.calcArea());
         System.out.println(c1.calcPerimeter());
-        c1.print();
+        c1.print();*/
+
+        Bank b1=new Bank("Slovenska Sporitelna a.s.");
+        System.out.println(b1.convert(120, "CHF"));
+        System.out.println(b1.loan(1000, 4.5, 20));
     }
 }

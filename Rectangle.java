@@ -45,19 +45,18 @@ public class Rectangle {
         return Math.sqrt((a*a)+(b*b));
     }
     public void showRectangle() {
-        if (fill=false) {
-            for (int rows=0; rows<b; rows++) {
-                for (int columns=0; columns<a; columns++) {
-                    if (rows==0 || rows==b || columns==0 || columns==a) {
-                        System.out.print(character+" ");
-                    } else if (fill=true) {
-                        System.out.print(character + " ");
-                    } else {
-                        System.out.print("  ");
-                    }
+        System.out.println();
+        for (int rows=0; rows<=b; rows++) {
+            for (int columns=0; columns<=a; columns++) {
+                if (rows==0 || rows==b || columns==0 || columns==a) {
+                    System.out.print(character+" ");
+                } else if (fill) {
+                    System.out.print(character + " ");
+                } else {
+                    System.out.print("  ");
                 }
-                System.out.println();
             }
+            System.out.println();
         }
     }
 
@@ -65,6 +64,7 @@ public class Rectangle {
         System.out.println(toString());
     }
 
+    @Override
     public String toString() {
         return "Rectangle: a = "+a+", b = "+b;
     }
